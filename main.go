@@ -3,28 +3,28 @@ package main
 import "fmt"
 
 func main() {
-	age:=24
-	name:="Wale"
+	// var ages [3]int = [3]int{1, 2, 3}
+	var ages = [3]int{1, 2, 3}
+	names:=[4]string{"Wale", "Taiwo", "Ade", "Shola"}
+	names[1]="luigi"
 
-	//Print
-	fmt.Print("Hello, ")
-	fmt.Print("World \n")
-	fmt.Print("New line \n")
+	fmt.Println(ages, len(ages))
+	fmt.Println(names, len(names))
 
-	//Println
-	fmt.Println("Hello, World")
-	fmt.Println("New Line")
+	//slices (uses array under the hood)
+	var scores = []int{23, 24, 26, 27}
+	scores[2] = 25
+	scores = append(scores, 28)
 
-	fmt.Println("my age is", age, "and my name is", name)
+	fmt.Println(scores, len(scores))
 
-	//Printfn(formatted strings) %_ = format specifiers
-	fmt.Printf("my age is %v, and my name is %v \n", age, name)
-	fmt.Printf("my age is %q, and my name is %q \n", age, name)
-	fmt.Printf("age is of type %T \n", age)
-	fmt.Printf("you scored %f points \n", 225.55)
-	fmt.Printf("you scored %0.1f points \n", 225.55)
+	//slice ranges
+	rangeOne := names[1:3]
+	rangeTwo := names[2:]
+	rangeThree := names[:3]
+	fmt.Println(rangeOne, rangeTwo, rangeThree)
 
-	//Sprint (save formatted strings)
-	var str = fmt.Sprintf("my age is %v, and my name is %v \n", age, name)
-	fmt.Printf("The saved string is: %v", str)
+	rangeOne = append(rangeOne, "Tayo")
+	fmt.Println(rangeOne)
+
 }
