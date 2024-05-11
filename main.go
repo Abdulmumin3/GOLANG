@@ -4,29 +4,26 @@ import (
 	"fmt"
 )
 
-func updateName(x string) string{
-	x="wedge"
-	return x
-}
-
-func updateMenu(y map[string]float64){
-	y["coffee"]=2.99
+func updateName(x *string) {
+	*x="wedge"
 }
 
 func main() {
 
 	name:="tifa"
 
-	name=updateName(name)
+	// updateName(name)
+
+	// fmt.Println("memory address of name is",&name)
+	
+	m:=&name
+	// fmt.Println("memory address:",m)
+	// fmt.Println("value at memory address:",*m)
 
 	fmt.Println(name)
 
-	menu:=map[string]float64{
-		"soup": 789.6,
-		"garri": 678.9,
-		"epa": 456.7,
-	}
+	updateName(m)
 
-	updateMenu(menu)
-	fmt.Println(menu)
+	fmt.Println(name)
+
 }
