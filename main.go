@@ -4,7 +4,22 @@ import (
 	"fmt"
 )
 
+func updateName(x string) string{
+	x="wedge"
+	return x
+}
+
+func updateMenu(y map[string]float64){
+	y["coffee"]=2.99
+}
+
 func main() {
+
+	name:="tifa"
+
+	name=updateName(name)
+
+	fmt.Println(name)
 
 	menu:=map[string]float64{
 		"soup": 789.6,
@@ -12,20 +27,6 @@ func main() {
 		"epa": 456.7,
 	}
 
+	updateMenu(menu)
 	fmt.Println(menu)
-	fmt.Println(menu["epa"])
-
-	for k, v := range menu {
-		fmt.Println(k, "-", v)
-	}
-
-	phoneBook:=map[int]string{
-		8020736247: "Wale",
-		9078965756: "Shade",
-		9197654567: "Tayo",
-	}
-
-	fmt.Println(phoneBook)
-	fmt.Println(phoneBook[8020736247])
-
 }
