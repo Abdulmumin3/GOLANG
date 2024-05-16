@@ -6,7 +6,7 @@ import (
 
 
 func main() {
-	myBil:=newBill("Wale's bill")
+	myBill:=newBill("Wale's bill")
 
-	fmt.Println(myBil)
+	fmt.Println(myBill.format())
 }
